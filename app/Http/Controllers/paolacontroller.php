@@ -65,9 +65,15 @@ class paolacontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+
+
+
     public function show($id)
     {
-        //
+        $alumnos = alumnos::find($id);
+        return $alumnos; 
     }
 
     /**
@@ -76,6 +82,14 @@ class paolacontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+
+
+
+
+
+
     public function edit($id)
     {
         //

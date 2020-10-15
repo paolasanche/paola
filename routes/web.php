@@ -22,8 +22,13 @@ Route::get('/miprimerarray', 'paolaController@getalumnos');
 
 Route::group(['prefix'=>'api'], function(){
  Route::apiResource('alumnos','paolaController');
- Route::apiResource('profesores','profesoresController@store');
+ 
 
 
 });
+
+
+
+
+
 
