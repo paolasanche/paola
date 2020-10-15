@@ -2,18 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use Illuminate\Http\Request; 
+use App\alumnos;
 class paolacontroller extends Controller
+
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function getalumnos()
+{
+    $alumnos = array (
+        
+          'nombre' => 'paola',
+          'apellido' => 'sanchez',
+          'email' => 'al221811737@gmail.com',
+          'edad' => '19',
+          
+    );
+    return response()->json($alumnos);
+     
+}
+
+
     public function index()
     {
-        return view('paola');
+        $alumnos = alumnos::all();
+        return response()->json(['alumnos' => $alumnos ]); 
     }
 
     /**
@@ -21,12 +38,16 @@ class paolacontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
+
     public function create()
     {
         //
     }
 
-    /**
+    /**   
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -34,7 +55,8 @@ class paolacontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $alumnos = Create::all($request);
+       return ('el registro alumno se ha guardadoo con exito');
     }
 
     /**

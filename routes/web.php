@@ -11,9 +11,19 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('/helloworld', 'paolaController');
+Route::get('/miprimerarray', 'paolaController@getalumnos');
 
-Route::resource('/paola','paolacontroller');
+
+Route::group(['prefix'=>'api'], function(){
+ Route::apiResource('alumnos','paolaController');
+ Route::apiResource('profesores','profesoresController@store');
+
+
+});
+
