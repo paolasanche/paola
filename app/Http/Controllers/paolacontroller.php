@@ -52,12 +52,24 @@ class paolacontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
+
+
+
+    public function _construct(alumnos $alumnos){
+        $this->alumnos = $alumnos;
+        
+        }
+
+
+     
     public function store(Request $request)
     {
        
-        $alumno = $this->create($Request->all());
-        return $alumno;
-        return response()->json (new alumnoRequests ($alumno),201);
+        $alumnos = $this->create($Request->all());
+        return $alumnos;
+        return response()->json (new alumnoRequests ($alumnos),201);
 
     }
 
@@ -115,8 +127,9 @@ class paolacontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(alumnos $alumnos)
     {
-        //
+        $alumnos -> delete();
+        return response()->json('el registro ha sido eliminado correctamente');
     }
 }
