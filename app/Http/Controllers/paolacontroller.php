@@ -17,10 +17,7 @@ class paolacontroller extends Controller
     $alumnos = array (
         
           'nombre' => 'paola',
-          'apellido' => 'sanchez',
-          'email' => 'al221811737@gmail.com',
-          'edad' => '19',
-          
+        
     );
     return response()->json($alumnos);
      
@@ -55,8 +52,7 @@ class paolacontroller extends Controller
      */
     public function store(Request $request)
     {
-       $alumnos = Create::all($request);
-       return ('el registro alumno se ha guardadoo con exito');
+       
     }
 
     /**
