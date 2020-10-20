@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request; 
 use App\alumnos;
+use App\Request\alumnos as alumnoRequests;
+
 class paolacontroller extends Controller
 
 {
@@ -53,6 +55,10 @@ class paolacontroller extends Controller
     public function store(Request $request)
     {
        
+        $alumno = $this->create($Request->all());
+        return $alumno;
+        return response()->json (new alumnoRequests ($alumno),201);
+
     }
 
     /**
