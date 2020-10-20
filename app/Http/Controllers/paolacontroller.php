@@ -118,7 +118,9 @@ class paolacontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $request;
+        $alumnos->update($request->all());
+        return response()->json($alumnos);
     }
 
     /**
